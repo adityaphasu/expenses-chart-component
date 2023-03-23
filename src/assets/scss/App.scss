@@ -1,0 +1,127 @@
+@use "./abstracts" as *;
+@use "reset";
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  background-color: $cream;
+  min-height: 100vh;
+  @include flex(center, center);
+}
+
+main {
+  padding: 1rem 0;
+
+  @include mq(medium) {
+    padding-top: 3.1rem;
+    width: 33.5rem;
+  }
+}
+
+.totalbalance {
+  background-color: $soft-red;
+  color: $very-pale-orange;
+  padding: 1.4rem;
+  @include flex(space-between, center);
+  @include border-radius;
+
+  @include mq(medium) {
+    padding: 1.5rem 2rem;
+  }
+
+  &__heading {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  &__text {
+    padding-bottom: 0.625rem;
+    font-size: 0.875rem;
+    @include mq(medium) {
+      font-size: 1rem;
+    }
+  }
+
+  &__value {
+    font-weight: $fw-700;
+    font-size: 1.47rem;
+
+    @include mq(medium) {
+      font-size: 2rem;
+    }
+  }
+
+  &__logo {
+    width: 3.8rem;
+    @include mq(medium) {
+      width: 5rem;
+    }
+  }
+}
+
+.expenses {
+  background-color: $very-pale-orange;
+  margin-top: 1rem;
+  padding: 1.4rem 1.2rem 1.2rem;
+  font-size: 0.96rem;
+  color: $medium-brown;
+  @include border-radius;
+
+  @include mq(medium) {
+    margin-top: 1.6rem;
+    padding: 1rem 2.2rem 2.5rem;
+    font-size: 1.1875rem;
+  }
+
+  &__chartbox {
+    min-height: 15rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 0.125rem solid $cream;
+
+    @include mq(medium) {
+    }
+  }
+
+  &__heading {
+    color: $dark-brown;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+
+    @include mq(medium) {
+      font-size: 2rem;
+      padding-block: 1.7rem;
+    }
+  }
+
+  &__container {
+    padding-top: 1.5rem;
+    @include flex(space-between, center);
+  }
+
+  &__text {
+    @include flex(null, flex-start);
+    flex-direction: column;
+
+    &--end {
+      padding-top: 1rem;
+      align-items: flex-end;
+    }
+  }
+
+  &__value {
+    font-weight: $fw-700;
+    color: $dark-brown;
+    &--large {
+      font-size: 1.9rem;
+      @include mq(medium) {
+        font-size: 2.98rem;
+      }
+    }
+  }
+}

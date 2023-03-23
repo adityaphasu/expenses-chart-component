@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+// COLORS
+
+$soft-red: hsl(10, 79%, 65%);
+$cyan: hsl(186, 34%, 60%);
+$dark-brown: hsl(25, 47%, 15%);
+$medium-brown: hsl(28, 10%, 53%);
+$cream: hsl(27, 66%, 92%);
+$very-pale-orange: hsl(33, 100%, 98%);
+
+// FONT
+
+$font-family: "DM Sans", sans-serif;
+$font-size: 1.125rem;
+$fw-700: 700;
+
+// BREAKPOINTS
+
+$breakpoints: (
+  "small": 29rem,
+  "medium": 48rem,
+  "large": 80rem,
+);
+
+// MIXINS
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin border-radius {
+  border-radius: 0.5rem;
+
+  @include mq(medium) {
+    border-radius: 1rem;
+  }
+}
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (min-width: $size) and (min-height: 43.75rem) {
+    @content;
+  }
+}
