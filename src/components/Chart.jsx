@@ -20,6 +20,11 @@ function Chart() {
           const colors = color.index === currentDay ? "hsl(186, 34%, 60%)" : "hsl(10, 79%, 65%)";
           return colors;
         },
+        hoverBackgroundColor: (color) => {
+          const colors =
+            color.index === currentDay ? "hsl(186, 34%, 60%, 0.5)" : "hsl(10, 79%, 65%, 0.5)";
+          return colors;
+        },
         borderRadius: 3,
         borderSkipped: false,
       },
